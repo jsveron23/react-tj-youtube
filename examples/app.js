@@ -26,11 +26,12 @@ export default class App extends Component {
       command: '',
       videoId: 'zLMeDUBKmBs'
     };
+
+    this.options = {
+      fs      : 1,
+      showinfo: 1
+    }
   }
-
-  componentWillMount() {}
-
-  componentDidMount() {}
 
   render() {
     return (
@@ -54,7 +55,8 @@ export default class App extends Component {
           </div>
 
           <div className="cp-wrap">
-            <Youtube command={this.state.command}
+            <Youtube options={this.options}
+                     command={this.state.command}
                      autoPlay={true}
                      width={640}
                      height={360}

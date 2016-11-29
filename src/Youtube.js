@@ -2,6 +2,7 @@ import React, {
   Component,
   PropTypes
 } from 'react';
+import { extend as _extend } from 'lodash';
 
 const __STATE__ = {
   '-1': 'unstart',
@@ -38,7 +39,7 @@ class Youtube extends Component {
       width     : props.width,
       height    : props.height,
       videoId   : props.videoId,
-      playerVars: {
+      playerVars: _extend({
         fs            : 0,
         rel           : 0,
         origin        : window.location.href,
@@ -51,7 +52,7 @@ class Youtube extends Component {
         cc_load_policy: 1,
         iv_load_policy: 3,
         modestbranding: 0
-      },
+      }, props.options),
       currentState: -1
     };
 
@@ -163,6 +164,7 @@ class Youtube extends Component {
 }
 
 Youtube.defaultProps = {
+  options            : {},
   autoPlay           : false,
   width              : '100%',
   height             : '100%',
