@@ -1,0 +1,117 @@
+[{
+  "label": "Sci-Fi",
+  "collapse": false,
+  "children": [{
+    "label": "Interstella",
+    "collapse": false,
+    "children": [{
+      "label": "Matthew McConaughey",
+      "leaf": true
+    }]
+  }]
+}, {
+  "label": "Action",
+  "collapse": false,
+  "children": [{
+    "label": "Edge of Tomorrow",
+    "collapse": false,
+    "children": [{
+      "label": "Emily Blunt",
+      "leaf": true
+    }]
+  }]
+}, {
+  "label": "Fantasy",
+  "collapse": false,
+  "children": [{
+    "label": "Fantastic Beasts and Where to Find Them",
+    "collapse": false,
+    "children": [{
+      "label": "Eddie Redmayne",
+      "leaf": true
+    }]
+  }, {
+    "label": "Miss Peregrine\"s Home for Peculiar Children",
+    "collapse": false,
+    "children": [{
+      "label": "Eva Green",
+      "leaf": true
+    }, {
+      "label": "Samuel L. Jackson",
+      "leaf": true
+    }]
+  }, {
+    "label": "Star Wars",
+    "collapse": false,
+    "children": [{
+      "label": "Mark Hamill",
+      "leaf": true
+    }, {
+      "label": "Harrison Ford",
+      "leaf": true
+    }, {
+      "label": "Felicity Jones",
+      "leaf": true
+    }, {
+      "label": "Daisy Ridley",
+      "leaf": true
+    }, {
+      "label": "Mads Mikkelsen",
+      "leaf": true
+    }, {
+      "label": "Emilia Clarke",
+      "leaf": true
+    }]
+  }, {
+    "label": "Doctor Strange",
+    "collapse": false,
+    "children": [{
+      "label": "Benedict Cumberbatch",
+      "leaf": true
+    }, {
+      "label": "Rachel McAdams",
+      "leaf": true
+    }, {
+      "label": "Chiwetel Ejiofor",
+      "leaf": true
+    }, {
+      "label": "Mads Mikkelsen",
+      "leaf": true
+    }]
+  }]
+}, {
+  "label": "Comedy",
+  "collapse": false,
+  "children": [{
+    "label": "The Wolf of Wall Street",
+    "collapse": false,
+    "children": [{
+      "label": "Leonardo DiCaprio",
+      "leaf": true
+    }, {
+      "label": "Matthew McConaughey",
+      "leaf": true
+    }]
+  }, {
+    "label": "Bad Moms",
+    "collapse": false,
+    "children": [{
+      "label": "Mila Kunis",
+      "leaf": true
+    }]
+  }, {
+    "label": "Ghostbusters",
+    "collapse": false,
+    "children": [{
+      "label": "Kristen Wiig",
+      "leaf": true
+    }]
+  }, {
+    "label": "Deadpool",
+    "collapse": false,
+    "children": [{
+      "label": "Ryan Reynolds",
+      "leaf": true
+    }]
+  }]
+}]
