@@ -1,34 +1,50 @@
 import React, { Component } from 'react';
 
-export default class Input extends Component {
+const noop = function() {};
+
+class Input extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      value: ''
+      value: props.value
     };
   }
 
-  onKeyUp(evt) {
+  componentWillReceiveProps(nextProps) {
+    const val = nextProps.value;
+
+    this.setState({
+      value: val
+    });
+  }
+
+  onChange(evt) {
     const {
-      onKeyUp
+      onChange
     } = this.props,
-    text = evt.target.value;
+    val = evt.target.value;
 
-    if (evt.keyCode === 13) {
-      this.setState({
-        value: text
-      });
+    this.setState({
+      value: val
+    });
 
-      onKeyUp(text);
-    }
+    onChange(val);
   }
 
   render() {
     return (
-      <input type="text"
-             onKeyUp={::this.onKeyUp}
-             placeholder={this.props.placeholder} />
+      <input type={this.props.type}
+             onChange={::this.onChange}
+             value={this.state.value} />
     );
   }
 };
+
+Input.defaultProps = {
+  type    : 'text',
+  onChange: noop,
+  value   : ''
+};
+
+export default Input;

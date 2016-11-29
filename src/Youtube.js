@@ -68,22 +68,7 @@ class Youtube extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    const
-      videoId = nextProps.videoId,
-      command = nextProps.command,
-      loop    = nextProps.loop;
-
-    // console.log(command, this.state.currentState);
-
-    if (command === 'toggleVideo') {
-      if (this.state.currentState !== 1) {
-        this.play();
-      } else {
-        this.pause();
-      }
-    } else if (command === 'stopVideo') {
-      this.player.stopVideo();
-    }
+    const videoId = nextProps.videoId;
 
     if (videoId !== this.state.videoId) {
       this.setState({
@@ -92,10 +77,6 @@ class Youtube extends Component {
 
       this.player.loadVideoById(videoId, 0);
     }
-  }
-
-  souldComponentUpdate() {
-    return false;
   }
 
   render() {
@@ -119,56 +100,34 @@ class Youtube extends Component {
   }
 
   onPlayerReady(evt) {
-    const {
-      autoPlay,
-      onPlayerReady
-    } = this.props;
-
-    if (autoPlay) {
-      this.player.playVideo();
-    }
+    const { onPlayerReady } = this.props;
 
     onPlayerReady(this.player, evt);
   }
 
   onPlayerError(evt) {
-    const { onPlayerError } = this.props;
+    const
+      { onPlayerError } = this.props,
+      data   = evt.data,
+      errMsg = __ERR__[evt.data.toString()];
 
-    onPlayerError(__ERR__[evt.data.toString()], evt);
+    onPlayerError(errMsg, evt);
   }
 
   onPlayerStateChange(evt) {
     const
       { onPlayerStateChange } = this.props,
-      data  = evt.data,
-      state = __STATE__[data.toString()];
+      data     = evt.data,
+      stateMsg = __STATE__[data.toString()];
 
-    if (state === 'end' && this.props.loop) {
-      this.play();
-    }
-
-    this.setState({
-      currentState: data
-    });
-
-    onPlayerStateChange(evt);
-  }
-
-  play() {
-    this.player.playVideo();
-  }
-
-  pause() {
-    this.player.pauseVideo();
+    onPlayerStateChange(stateMsg, evt);
   }
 }
 
 Youtube.defaultProps = {
   options            : {},
-  autoPlay           : false,
   width              : '100%',
   height             : '100%',
-  loop               : false,
   onPlayerReady      : noop,
   onPlayerError      : noop,
   onPlayerStateChange: noop
